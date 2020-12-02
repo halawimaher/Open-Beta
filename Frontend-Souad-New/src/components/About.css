@@ -1,0 +1,67 @@
+.About-Section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: right;
+    background: #fff;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+
+.test {
+    text-align: center;
+    font-size: 36px;
+    color: #007CC7;
+    font-family: 'Pacifico';
+    font-weight: bold;
+}
+
+.About-Section p {
+    width: 50vw;
+    color: #04293f;
+    text-align: center;
+    font-family: 'Architects Daughter';
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+@media screen and (max-width: 760px) {
+    .About-Section p {
+        padding: 0;
+        width: 80vw;
+    }
+
+    .test {
+        border-right: 0;
+    }
+
+    .About-Text p {
+        overflow-y: auto;
+        text-align: center;
+    }
+
+    .About-Text {
+        width: 90%;
+    }
+
+    .About-Section {
+        flex-direction: column;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .About-Section p {
+        padding: 10%;
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .About-Section p {
+        width: 80vw;
+    }
+}

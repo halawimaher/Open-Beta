@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+body {
+  background: #007CC7;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+#name,
+#email,
+#phone {
+  color: #242424;
+  font-size: 18px;
+}
+
+.messages input{
+  color: #fff;
+  text-align: center;
+}
+
+input:focus{
+  border-bottom: 3px solid yellow;
+}
+textarea:focus{
+  border-bottom: 3px solid yellow;
+}
+
+.input-areas {
+  display: flex;
+  overflow: hidden;
+  padding: 50px;
+}
+
+i {
+  height: 50px;
+}
+
+.hero-info {
+  width: 18%;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-element {
+  width: 100%;
+  margin: 0;
+}
+
+
+.footer-input, 
+textarea{
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  margin-bottom: 16px;
+  border: 1px solid #242424;
+  background: #9abed4;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.field{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 25vw;
+  margin-bottom: 0;
+}
+
+.field label{
+  color: #242424;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 50vw;
+  margin-bottom: 0;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 760px) {
+  
+  .input-areas{
+    padding-left: 0;
+  }
+  .field{
+    width: 100%;
+  }
+  .messages input{
+    width: 50%;
+    text-align: center;
+  }
+  .hero-info{
+    display: none;
+  }
+}
