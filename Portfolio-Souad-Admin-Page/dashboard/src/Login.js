@@ -21,11 +21,11 @@ class Login extends Component {
             body: JSON.stringify(this.state)
         }).then(response => response.json()).then(data => {
             localStorage.setItem('login', data.token)
+            this.props.history.push('/about')
         })
     }
 
     render() {
-        if (localStorage.getItem('login') != null) this.props.history.push('/about')
         return (
             <div id="Log">
                 <form id="loginForm">
