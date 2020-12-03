@@ -61,9 +61,15 @@ const initializeDatabase = async () => {
 
 
     //Query by ID
-    //SKills
+    //Skills
     const getSkillsByID = async (id) => {
       const rows = await db.all(`SELECT id, name, label, description FROM skills WHERE id=${id}`)
+      return rows
+    }
+
+    //User
+    const getUserById = async (id) => {
+      const rows = await db.all(`SELECT id FROM Users WHERE id=${id}`)
       return rows
     }
 
@@ -180,7 +186,7 @@ const initializeDatabase = async () => {
         return false;
       }
       return true;
-      }; 
+    };
 
     /*------------------------------------------------------------------*/
     /*------------------------------------------------------------------*/
@@ -227,11 +233,11 @@ const initializeDatabase = async () => {
     }
     //Homeup
     const updateHome = async (id, title, description) => {
-    const rows = await db.run(`UPDATE Home
+      const rows = await db.run(`UPDATE Home
     SET title = '${title}', description = '${description}'
     WHERE id=${id}`)
-    return rows
-  }    
+      return rows
+    }
 
     const controller = {
       getHomeList,
@@ -265,7 +271,8 @@ const initializeDatabase = async () => {
       updateHome,
       getUsersList,
       createUser,
-      getUserByUsername
+      getUserByUsername,
+      getUserById
     }
 
     return controller;
