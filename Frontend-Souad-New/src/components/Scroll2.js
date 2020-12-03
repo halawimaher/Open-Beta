@@ -18,7 +18,7 @@ class Scroll2 extends React.Component {
   }
   render() {
     const c1style = {
-      margin: 10,
+      marginTop: 250,
     }
     if (this.state.homeInfo.length === 0) {
       return <Loading />

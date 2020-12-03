@@ -20,10 +20,15 @@ class Login extends Component {
             },
             body: JSON.stringify(this.state)
         }).then(response => response.json()).then(data => {
-            localStorage.setItem('login', data.token)
-            this.props.history.push('/about')
+            if (data.token) {
+                localStorage.setItem('login', data.token)
+                this.props.history.push('/about')
+            } else {
+                console.log('wrong user')
+            }
         })
     }
+
 
     render() {
         return (
