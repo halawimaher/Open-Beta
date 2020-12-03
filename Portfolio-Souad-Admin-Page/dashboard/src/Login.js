@@ -22,7 +22,7 @@ class Login extends Component {
         }).then(response => response.json()).then(data => {
             if (data.token) {
                 localStorage.setItem('login', data.token)
-                this.props.history.push('/about')
+                this.props.history.push('/home')
             } else {
                 console.log('wrong user')
             }

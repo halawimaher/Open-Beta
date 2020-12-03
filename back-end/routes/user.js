@@ -1,5 +1,6 @@
 const router = require('express').Router()
 import initializeDatabase from '../src/controller'
+import auth from '../middlewares/auth'
 require('dotenv').config()
 
 const start = async () => {
@@ -8,6 +9,17 @@ const start = async () => {
   const bcrypt = require('bcryptjs')
 
   const jwt = require('jsonwebtoken')
+
+  router.get('/login', auth, async (req, res) => {
+    try {
+      console.log(req.user)
+      const user = await controller.getUserById(req.user.id)
+      res.json({ success: true, data: user });
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  });
 
   router.get('/register', async (req, res) => {
     try {
@@ -31,6 +43,7 @@ const start = async () => {
 
     try {
       let user = await controller.getUserByUsername(username)
+      console.log(username, password)
       if (!user) {
         return res
           .status(400)

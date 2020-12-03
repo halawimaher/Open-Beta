@@ -18,7 +18,7 @@ class Scroll2 extends React.Component {
     // console.log(result.homelist);
     this.setState({ homeInfo: result.homeList });
     console.log(this.state.homeInfo);
-  }
+
   render() {
     const c1style = {
       marginTop: 250,

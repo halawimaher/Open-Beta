@@ -67,13 +67,19 @@ const initializeDatabase = async () => {
     /*------------------------------------------------------------------*/
 
     //Query by ID
-    //SKills
+    //Skills
     const getSkillsByID = async (id) => {
       const rows = await db.all(
         `SELECT id, name, label, description FROM skills WHERE id=${id}`
       );
       return rows;
     };
+
+    //User
+    const getUserById = async (id) => {
+      const rows = await db.all(`SELECT id FROM Users WHERE id=${id}`)
+      return rows
+    }
 
     //Experience
     const getExperienceByID = async (id) => {
@@ -277,9 +283,15 @@ const initializeDatabase = async () => {
     const updateHome = async (id, title, description) => {
       const rows = await db.run(`UPDATE Home
     SET title = '${title}', description = '${description}'
+<<<<<<< HEAD
     WHERE id=${id}`);
       return rows;
     };
+=======
+    WHERE id=${id}`)
+      return rows
+    }
+>>>>>>> c9fc04f098a455832cac81bdf463c004bc97c2d2
 
     const controller = {
       getHomeList,
@@ -314,7 +326,12 @@ const initializeDatabase = async () => {
       getUsersList,
       createUser,
       getUserByUsername,
+<<<<<<< HEAD
     };
+=======
+      getUserById
+    }
+>>>>>>> c9fc04f098a455832cac81bdf463c004bc97c2d2
 
     return controller;
   } catch (error) {
