@@ -15,6 +15,7 @@ class Scroll2 extends React.Component {
     const response = await fetch("http://localhost:8000/home");
     const result = await response.json();
     this.setState({ homeInfo: result.homeList })
+    console.log(this.state.homeInfo)
   }
   render() {
     const c1style = {
