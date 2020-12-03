@@ -1,0 +1,39 @@
+.fr1 {
+  margin-top: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 300%;
+}
+.te1 {
+  width: 100%;
+  height: 200%;
+  padding: 15px;
+  margin: 15px;
+}
+.f1 {
+  width: 100%;
+  height: 200%;
+  padding: 15px;
+  margin: 15px;
+}
+.f2 {
+  width: 100%;
+  height: 200%;
+  padding: 15px;
+  margin: 15px;
+}
+.f3 {
+  height: 200%;
+  padding: 15px;
+  width: 100%;
+  margin: 15px;
+}
+.f4 {
+  height: 200%;
+  padding: 15px;
+  width: 140%;
+  margin: 15px;
+}
