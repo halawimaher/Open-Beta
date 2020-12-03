@@ -1,4 +1,4 @@
-{/*}.App {
+/*}.App {
   text-align: center;
 }
 
@@ -35,12 +35,12 @@
   to {
     transform: rotate(360deg);
   }
-}*/}
+}*/
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 .App{
   position :relative;
-  background:url('../src/images/developpeur.jpg');
+  background:gray;
   background-size:cover;
   height:100vh;
   width: 100%;

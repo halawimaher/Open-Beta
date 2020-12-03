@@ -32,7 +32,7 @@ deleteHome=async(id)=>{
     
 
 };
-  const url=`http://localhost:8000/home/delete/${id}`;
+  const url=`http://localhost:8000/home/${id}`;
   try {
     const response = await fetch(url,requestOptions);
     const result=await response.json();
@@ -59,7 +59,6 @@ render() {
                   <tr>
                     <th>Id</th>
                     <th>Title</th>
-                    <th>Image</th>
                     <th>
                       <div>
                         <span> Add Home </span>
@@ -81,7 +80,7 @@ render() {
                       <tr key={index}>
                     <td>{home.title}</td>
                     <td>{home.description}</td> 
-                    <td>{home.image}</td> 
+                    {/* <td><img width="50px" height="50px"src={`http://localhost:8000/images/${home.image}`}/></td>  */}
                     <td>
                         <div >
                         {/* {this.state.updatehome=home} */}

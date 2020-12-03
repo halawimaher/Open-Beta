@@ -174,6 +174,13 @@ const initializeDatabase = async () => {
       const rows = await db.run(`DELETE FROM Contact_Links WHERE id=${id}`)
       return rows
     }
+    const deleteHome = async (id) => {
+      const result = await db.run(`DELETE FROM home WHERE id=${id}`)
+      if (result.stmt.changes === 0) {
+        return false;
+      }
+      return true;
+      }; 
 
     /*------------------------------------------------------------------*/
     /*------------------------------------------------------------------*/
@@ -218,6 +225,13 @@ const initializeDatabase = async () => {
       WHERE id=${id}`)
       return rows
     }
+    //Homeup
+    const updateHome = async (id, title, description) => {
+    const rows = await db.run(`UPDATE Home
+    SET title = '${title}', description = '${description}'
+    WHERE id=${id}`)
+    return rows
+  }    
 
     const controller = {
       getHomeList,
@@ -242,11 +256,13 @@ const initializeDatabase = async () => {
       deleteProject,
       deleteAbout,
       deleteLink,
+      deleteHome,
       updateAbout,
       updateSkill,
       updateExperience,
       updateProject,
       updateLink,
+      updateHome,
       getUsersList,
       createUser,
       getUserByUsername

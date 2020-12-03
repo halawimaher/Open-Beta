@@ -8,32 +8,75 @@ const start = async () => {
   //Get all 
   //Home
   router.get('/', async (req, res) => {
-    try {
-      const homeList = await controller.getHomeList()
-      res.send(
-        {
-          success: true,
-          homeList
-        });
-    } catch (error) {
-      res.status(500).send('Server Error')
-    }
-  })
+    const homelist =await controller.getHomeList();
+    // console.log(homelist.slice(-3).filter((a, b) => b.title > a.title))
+
+        res.send(
+            {
+                success: true,
+                homelist
+            } 
+            //console.log(string)
+        )} );
+ 
 
   //Home
   router.post('/', async (req, res) => {
-    try {
-      const { title, description } = req.query
-      const home = await controller.createHome(title, description)
+    const { title, description } = req.body;
+    const image = req.file && req.file.filename;
+
+    // console.log(title, description, image)
+    // console.log(req.file)
+    // console.log(req.file.filename)
+
+   
+      const home = await controller.createHome(title,description);
+      //console.log(home)
       res.send(
         {
           success: true,
           home
         });
-    } catch (error) {
-      res.status(500).send('Server Error')
-    }
   })
+
+  router.delete('/:id',async (req, res)=>{
+
+    try {
+      const { id } = req.params
+      const home = await controller.deleteHome(id)
+      res.send(
+          {
+          success: true,
+          home
+          });
+      } catch (error) {
+      console.log(error)
+      res.status(500).send(error)
+      }
+  })
+
+  router.put('/edit/:id',async (req, res)=>{
+    try {
+      const { id } = req.params;
+      const { title, description } = req.body;
+      // const image = req.file && req.file.filename;
+
+      console.log(id, title, description)              
+    const home = await controller.updateHome(id, title, description)
+    res.send(
+      {
+        success: true,
+        home
+      });
+      
+  } catch (error) {
+    res.status(500).send('Server Error')
+  }
+  
+  
+  })
+
+   
 
 }
 start()
